@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TEXTCOM</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    </head>
+<body>
+    <header class="flex justify-between items-center py-8 px-4 md:px-40">
+        <div class="logo">TEXTCOM</div>
+        
+        <button id="menu-btn" class="md:hidden z-50">
+            <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            <i class="fas fa-times text-2xl hidden" id="close-icon"></i>
+        </button>
+        <nav id="nav-menu" class="fixed z-[60] md:relative top-0 -left-[70%] md:left-0 h-screen md:h-auto w-[70%] md:w-auto 
+                             bg-white md:bg-transparent  md:shadow-none
+                             transform transition-transform duration-300 ease-in-out md:transform-none
+                             md:block overflow-y-auto md:overflow-visible">
+            <ul class="flex flex-col md:flex-row min-h-0 md:min-h-0 pt-24 md:pt-0
+                       p-4 md:p-0 gap-4 md:gap-8 justify-start md:justify-between items-start md:items-center">
+                <!-- About Dropdown -->
+                <li class="relative group w-full md:w-auto">
+                    <div class="flex items-center justify-between md:justify-center hover:text-blue-500 cursor-pointer">
+                        <span>About</span>
+                        <i class="fas fa-chevron-down ml-2 text-sm transition-transform group-hover:rotate-180"></i>
+                    </div>
+                    <ul class="hidden group-hover:block absolute left-0 md:top-full mt-2 w-48 
+                               bg-white shadow-lg rounded-md py-2 z-50
+                               [transition:visibility_0s_2s,opacity_0.2s_linear]
+                               group-hover:[transition:visibility_0s,opacity_0.2s_linear]">
+                        <li><a href="/our-story" class="block px-4 py-2 hover:bg-gray-100">Our Story</a></li>
+                        <li><a href="/team" class="block px-4 py-2 hover:bg-gray-100">Team</a></li>
+                        <li><a href="/careers" class="block px-4 py-2 hover:bg-gray-100">Careers</a></li>
+                    </ul>
+                </li>
+
+                <!-- Services Dropdown -->
+                <li class="relative group w-full md:w-auto">
+                    <div class="flex items-center justify-between md:justify-center hover:text-blue-500 cursor-pointer">
+                        <span>Services</span>
+                        <i class="fas fa-chevron-down ml-2 text-sm transition-transform group-hover:rotate-180"></i>
+                    </div>
+                    <ul class="hidden group-hover:block absolute left-0 md:top-full mt-2 w-48 
+                               bg-white shadow-lg rounded-md py-2 z-50
+                               [transition:visibility_0s_2s,opacity_0.2s_linear]
+                               group-hover:[transition:visibility_0s,opacity_0.2s_linear]">
+                        <li><a href="/sms-api" class="block px-4 py-2 hover:bg-gray-100">SMS API</a></li>
+                        <li><a href="/voice-api" class="block px-4 py-2 hover:bg-gray-100">Voice API</a></li>
+                        <li><a href="/email-services" class="block px-4 py-2 hover:bg-gray-100">Email Services</a></li>
+                        <li><a href="/integration" class="block px-4 py-2 hover:bg-gray-100">Integration</a></li>
+                    </ul>
+                </li>
+
+                <li class="w-full md:w-auto text-left md:text-center hover:text-blue-500 cursor-pointer">Pricing</li>
+                <li class="w-full md:w-auto text-left md:text-center hover:text-blue-500 cursor-pointer">Developers</li>
+                <li class="w-full md:w-auto text-left md:text-center hover:text-blue-500 cursor-pointer">Contact</li>
+                <button class="bg-orange-500 text-white px-6 py-2 w-full md:w-auto">Get Free SMS</button>
+            </ul>
+        </nav>
+
+        <div id="overlay" class="fixed inset-0 bg-black z-[60] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out md:hidden"></div>
+    </header>
+
+    <div class="hero flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-40 py-28 bg-[#123A5B]">
+        <!-- Text section -->
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-center leading-tight text-white">
+                Contact
+            </h1>          
+        </div>
+    </div>
+    <!-- Contact section -->
+    <section class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+        <!-- Hero Banner -->
+        <div class="bg-[#123A5B] py-20 px-4 md:px-40 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+            </div>
+            
+            <div class="relative text-center max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Let's Start a Conversation</h1>
+                <p class="text-gray-300 text-lg md:text-xl">Whether you have a question about features, trials, pricing, or anything else, our team is ready to answer all your questions</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto px-4 md:px-8 -mt-16">
+            <!-- Contact Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Quick Contact Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Quick Contact</h3>
+                    <p class="text-gray-600 mb-6">Get in touch with our support team</p>
+                    <a href="tel:+15551234567" class="flex items-center text-orange-500 hover:text-orange-600 transition-colors mb-3">
+                        <i class="fas fa-phone mr-3"></i>
+                        +1 (555) 123-4567
+                    </a>
+                    <a href="mailto:help@textcom.com" class="flex items-center text-orange-500 hover:text-orange-600 transition-colors">
+                        <i class="fas fa-envelope mr-3"></i>
+                        help@textcom.com
+                    </a>
+                </div>
+
+                <!-- Sales Inquiries Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sales Inquiries</h3>
+                    <p class="text-gray-600 mb-6">Talk to our sales team</p>
+                    <a href="tel:+15551234568" class="flex items-center text-orange-500 hover:text-orange-600 transition-colors mb-3">
+                        <i class="fas fa-phone mr-3"></i>
+                        +1 (555) 123-4568
+                    </a>
+                    <a href="mailto:sales@textcom.com" class="flex items-center text-orange-500 hover:text-orange-600 transition-colors">
+                        <i class="fas fa-envelope mr-3"></i>
+                        sales@textcom.com
+                    </a>
+                </div>
+
+                <!-- Office Location Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-location-dot text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Visit Our Office</h3>
+                    <p class="text-gray-600 mb-6">Come say hello at our office HQ</p>
+                    <div class="text-gray-600">
+                        <p class="flex items-center mb-2">
+                            <i class="fas fa-building mr-3 text-orange-500"></i>
+                            123 Business Ave
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-map-pin mr-3 text-orange-500"></i>
+                            New York, NY 10001
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Left Column - Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+                        <form class="space-y-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Full Name</label>
+                                    <div class="relative">
+                                        <input type="text" id="name" 
+                                            class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white
+                                                   focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                            placeholder="John Doe">
+                                        <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email Address</label>
+                                    <div class="relative">
+                                        <input type="email" id="email" 
+                                            class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white
+                                                   focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                            placeholder="john@example.com">
+                                        <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone Number</label>
+                                    <div class="relative">
+                                        <input type="tel" id="phone" 
+                                            class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white
+                                                   focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                                            placeholder="+1 (555) 000-0000">
+                                        <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1" for="message">Message</label>
+                                    <textarea id="message" rows="4" 
+                                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white
+                                               focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" 
+                                class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg transition-colors
+                                       font-semibold flex items-center justify-center space-x-2 group">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column - FAQ -->
+                    <div class="bg-gray-50 rounded-xl p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">What are your business hours?</h4>
+                                <p class="text-gray-600">Our support team is available 24/7. Sales team works Monday through Friday, 9 AM to 6 PM EST.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">How quickly do you respond?</h4>
+                                <p class="text-gray-600">We typically respond to all inquiries within 2 hours during business hours.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Do you offer technical support?</h4>
+                                <p class="text-gray-600">Yes, our technical support team is available 24/7 to help you with any issues.</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h4 class="font-semibold text-gray-900 mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-gray-600 hover:text-orange-500 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-gray-600 hover:text-orange-500 transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-gray-600 hover:text-orange-500 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-gray-600 hover:text-orange-500 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-10 px-4 md:px-40">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <!-- Company Info -->
+            <div class="space-y-6">
+                <div class="text-2xl font-bold text-orange-500">TEXTCOM</div>
+                <p class="text-gray-400">Empowering businesses with reliable messaging solutions across the globe.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-orange-500 font-semibold mb-6">Quick Links</h3>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                </ul>
+            </div>
+    
+            <!-- Developer -->
+            <div>
+                <h3 class="text-orange-500 font-semibold mb-6">Developer</h3>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Developer Blog</a></li>
+                </ul>
+            </div>
+    
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-orange-500 font-semibold mb-6">Stay Updated</h3>
+                <p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and insights.</p>
+                <form class="space-y-3">
+                    <div class="relative">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email" 
+                            class="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-300"
+                        >
+                    </div>
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <!-- Copyright -->
+                <div class="text-gray-400 text-sm">
+                    © 2024 TEXTCOM. All rights reserved.
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a>
+                </div>
+    
+                <!-- Additional Info -->
+                <div class="flex items-center space-x-2 text-sm text-gray-400">
+                    <i class="fas fa-shield-alt text-orange-500"></i>
+                    <span>ISO 27001 Certified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
